@@ -1,4 +1,4 @@
-describe('Android Elements Test', () => {
+describe.skip('Android Elements Test', () => {
     it('Find element by accessibility ID', async () => {
         //find element by accessibility ID
         // The '~' character indicated we are looking for an element by accessibility ID
@@ -70,10 +70,17 @@ describe('Android Elements Test', () => {
         await expect(actualList).toEqual(expectedList);
     })
 
-    it.only('interact with text field', async () => {
+    it('interact with text field', async () => {
+        // go to auto complete screen
         await $('~Views').click();
         await $('//android.widget.TextView[@content-desc="Auto Complete"]').click()
         await $('~1. Screen Top').click();
+
+        const textField = await $('//*[@resource-id="io.appium.android.apis:id/edit"]')
+        await textField.addValue('Mexico')
+
+        //verify the country name
+        await expect(textField).toHaveText('Mexico')
 
         await driver.pause(5000);
     })

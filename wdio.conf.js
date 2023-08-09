@@ -26,7 +26,7 @@ exports.config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/*.js'
+        './test/specs/android/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -60,8 +60,8 @@ exports.config = {
         'appium:deviceName': 'Pixel 6',
         'appium:platformVersion': '13.0',
         'appium:automationName': 'UiAutomator2',
-        'appium:app': path.join(process.cwd(), 'app/ApiDemos-debug.apk'),
-        hostname: 'localhost',
+        'appium:app': path.join(process.cwd(), 'app/ColorNote+Notepad.apk'),
+        'appium:autoGrantPermissions': true,
         //"appium:appPackage": "com.viubyhub.mobile",
         //"appium:appActivity": "com.viubyhub.mobile.MainActivity",
     }],
