@@ -16,4 +16,5 @@ class ListScreen {
     }
 }
 
-module.exports = new ListScreen();
+//module.exports = new ListScreen();
+export default new ListScreen();
