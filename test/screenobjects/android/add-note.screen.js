@@ -32,4 +32,4 @@ class AddNoteScreen {
 //module.exports = new AddNoteScreen();
 
 //thanks to Babel now I can use ES6
-export default new AddNoteScreen()
+export default new AddNoteScreen();

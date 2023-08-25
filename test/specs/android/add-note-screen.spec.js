@@ -1,23 +1,23 @@
-const AddNoteScreen = require('../../screenobjects/android/add-note.screen');
+import addNoteScreen from '../../screenobjects/android/add-note.screen';
 
-describe.skip('Delete Note', () => {
+describe('Delete Note', () => {
     it('skip tutorial', async () => {        
-        await AddNoteScreen.skipBtn.click();
+        await addNoteScreen.skipBtn.click();
     });
 
     it('add note, verify elements and save it', async () => {
-        await AddNoteScreen.addNoteTxt.click();
-        await AddNoteScreen.textOption.click();
-        await expect(AddNoteScreen.editNoteBtn).toBeDisplayed();
+        await addNoteScreen.addNoteTxt.click();
+        await addNoteScreen.textOption.click();
+        await expect(addNoteScreen.editNoteBtn).toBeDisplayed();
 
-        await AddNoteScreen.noteTitle.setValue('Fav Anime List');
-        await AddNoteScreen.noteContent.addValue('Jojo Bizarre Adventure\nDemon Slayer\nJujutsu Kaisen');
+        await addNoteScreen.noteTitle.setValue('Fav Anime List');
+        await addNoteScreen.noteContent.addValue('Jojo Bizarre Adventure\nDemon Slayer\nJujutsu Kaisen');
 
         // Save the changes
 
         // Assertions
-        await expect(AddNoteScreen.editBtn).toBeDisplayed();
-        await expect(AddNoteScreen.viewNote).toHaveText('Jojo Bizarre Adventure\nDemon Slayer\nJujutsu Kaisen');
+        await expect(addNoteScreen.editBtn).toBeDisplayed();
+        await expect(addNoteScreen.viewNote).toHaveText('Jojo Bizarre Adventure\nDemon Slayer\nJujutsu Kaisen');
     });
 
     it('Delete note', async () => {

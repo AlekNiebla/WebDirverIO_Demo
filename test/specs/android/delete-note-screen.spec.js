@@ -1,4 +1,4 @@
-const EditNoteScreen = require('../../screenobjects/android/edit-note.screen');
+import EditNoteScreen from '../../screenobjects/android/edit-note.screen';
 
 describe('Delete Note', () => {
 
@@ -8,7 +8,7 @@ describe('Delete Note', () => {
         await driver.back();
     });
 
-    it.only('Delete a note & check the note in trash can', async () => {
+    it('Delete a note & check the note in trash can', async () => {
         const Title = await EditNoteScreen.firstNote.getText();
 
         await EditNoteScreen.firstNote.click();

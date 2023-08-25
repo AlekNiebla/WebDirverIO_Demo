@@ -15,3 +15,8 @@ https://www.npmjs.com/package/eslint-plugin-wdio
 > to run the android tests run teh following command:
     npx wdio config/wdio.android.conf.js
     NOTE: you'll need to lift up the simulator before running these tests
+
+# debugging
+> in case there is a socket hang up, it might be necessary to run these two commands, the proceed to restart the appium server.
+    adb uninstall io.appium.uiautomator2.server
+    adb uninstall io.appium.uiautomator2.server.test

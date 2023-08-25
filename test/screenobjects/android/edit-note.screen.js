@@ -1,5 +1,6 @@
 
-const AddNoteScreen = require('./add-note.screen');
+import addNoteScreen from './add-note.screen';
+
 
 class EditNoteScreen {
 
@@ -20,26 +21,26 @@ class EditNoteScreen {
     }
 
     async skipTutorial() {
-        await AddNoteScreen.skipBtn.click();
+        await addNoteScreen.skipBtn.click();
 
-        await expect(AddNoteScreen.addNoteTxt).toBeDisplayed();
+        await expect(addNoteScreen.addNoteTxt).toBeDisplayed();
         }
 
     async addAndSaveNote(noteHeading, noteBody) {
-        await AddNoteScreen.addNoteTxt.click();
-        await AddNoteScreen.textOption.click();
-        await expect(AddNoteScreen.textEditing).toBeDisplayed();
+        await addNoteScreen.addNoteTxt.click();
+        await addNoteScreen.textOption.click();
+        await expect(addNoteScreen.textEditing).toBeDisplayed();
 
-        await AddNoteScreen.noteHeading.setValue(noteHeading);
-        await AddNoteScreen.noteBody.addValue(noteBody);
+        await addNoteScreen.noteHeading.setValue(noteHeading);
+        await addNoteScreen.noteBody.addValue(noteBody);
 
         // Save the changes
-        await AddNoteScreen.saveNote();
+        await addNoteScreen.saveNote();
 
         // Assertions
-        await expect(AddNoteScreen.editBtn).toBeDisplayed();
-        await expect(AddNoteScreen.viewNote).toHaveText(noteBody);
+        await expect(addNoteScreen.editBtn).toBeDisplayed();
+        await expect(addNoteScreen.viewNote).toHaveText(noteBody);
     }
 }
 
-module.exports = new EditNoteScreen();
+export default new EditNoteScreen();

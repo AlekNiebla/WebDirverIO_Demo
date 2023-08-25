@@ -1,12 +1,17 @@
 const {config} = require('./wdio.shared.conf');
-const path = require('path');
+const credentials = require('../creds.env.json');
 
+//
+// ====================
+// Browserstack Credentials
+// ====================
+//
+config.user = credentials.username;
+config.key = credentials.key;
 //
 // ====================
 // Runner Configuration
 // ====================
-config.port= 4723;
-config.runner ='local';
 //
 // ============
 // Specs
@@ -21,11 +26,11 @@ config.specs = [
 // ============
 config.capabilities = [
     {
-        'appium:platformName': 'android',
-        'appium:deviceName': 'Pixel 6',
-        'appium:platformVersion': '13',
+        'platformName': 'android',
+        "appium:deviceName" : "Google Pixel 6",
+        'appium:platformVersion': '12.0',
         'appium:automationName': 'UiAutomator2',
-        'appium:app': path.join(process.cwd(), 'app/android/ColorNote+Notepad.apk'),
+        'appium:app': 'bs://d3426236dffb921d4002ce9ed56b9c1bf93d9895',
         'appium:autoGrantPermissions': true,
     }
 ]
@@ -35,6 +40,6 @@ config.capabilities = [
 // Services take over a specific job you don't want to take care of. They enhance
 // your test setup with almost no effort. Unlike plugins, they don't add new
 // commands. Instead, they hook themselves up into the test process.
-config.services = ['appium'];
+config.services = ['browserstack'];
 
 exports.config = config;
