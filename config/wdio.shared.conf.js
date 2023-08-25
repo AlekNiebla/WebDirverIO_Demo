@@ -1,13 +1,10 @@
-const path = require('path');
-
 exports.config = {
     //
     // ====================
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
-    runner: 'local',
-    //port: 4723,
+    //runner: 'local',
     //
     // ==================
     // Specify Test Files
@@ -24,10 +21,6 @@ exports.config = {
     // then the current working directory is where your `package.json` resides, so `wdio`
     // will be called from there.
     //
-    specs: [
-        // ToDo: define location for spec files here
-        './test/specs/ios/ios-todoList.spec.js'
-    ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -54,28 +47,6 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [
-    //    {
-    //    // capabilities for local Appium web tests on an Android Emulator
-    //    'appium:platformName': 'Android',
-    //    'appium:deviceName': 'Pixel 6',
-    //    'appium:platformVersion': '13.0',
-    //    'appium:automationName': 'UiAutomator2',
-    //    'appium:app': path.join(process.cwd(), 'app/android/ColorNote+Notepad.apk'),
-    //    'appium:autoGrantPermissions': true,
-    //    //"appium:appPackage": "com.viubyhub.mobile",
-    //    //"appium:appActivity": "com.viubyhub.mobile.MainActivity",
-    //}
-    {
-        platformName: 'ios',
-        'appium:deviceName': 'iPhone 12 Pro',
-        'appium:platformVersion': '14.5',
-        'appium:automationName': 'XCUITest',
-        'appium:app': path.join(process.cwd(), './app/ios/MVCTodo.app'),
-        'appium:autoGrantPermissions': true,
-    }
-],
-
     //
     // ===================
     // Test Configurations
