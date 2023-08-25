@@ -6,8 +6,8 @@ const { config } = require('./wdio.shared.conf');
 // Browserstack Credentials
 // ====================
 //
-config.user = process.env.BROWSERSTACL_USER;
-config.key = process.env.BROWSERSTACL_KEY;
+config.user = process.env.BROWSERSTACK_USER;
+config.key = process.env.BROWSERSTACK_KEY;
 //
 // ====================
 // Runner Configuration
