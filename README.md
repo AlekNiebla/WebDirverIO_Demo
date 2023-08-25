@@ -1,6 +1,11 @@
 # WebDirverIO_Demo
 WebDriverIO playground project
 
+to run the tests in this project it is necessary to setup a  `creds.env.json` files with the following keys.
+{
+    "username":"BROWSERSTACK_USER",
+    "key":"BROWSERSTACK_KEY"
+}
 
 # BABEL LINK
 https://webdriver.io/docs/babel/
