@@ -1,13 +1,13 @@
-const {config} = require('./wdio.shared.conf');
-const credentials = require('../creds.env.json');
+require('dotenv').config()
+const { config } = require('./wdio.shared.conf');
 
 //
 // ====================
 // Browserstack Credentials
 // ====================
 //
-config.user = credentials.username;
-config.key = credentials.key;
+config.user = process.env.BROWSERSTACL_USER;
+config.key = process.env.BROWSERSTACL_KEY;
 //
 // ====================
 // Runner Configuration
