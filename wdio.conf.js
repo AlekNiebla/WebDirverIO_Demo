@@ -26,7 +26,7 @@ exports.config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/android/*.js'
+        './test/specs/ios/ios-todoList.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -54,17 +54,27 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        // capabilities for local Appium web tests on an Android Emulator
-        'appium:platformName': 'Android',
-        'appium:deviceName': 'Pixel 6',
-        'appium:platformVersion': '13.0',
-        'appium:automationName': 'UiAutomator2',
-        'appium:app': path.join(process.cwd(), 'app/ColorNote+Notepad.apk'),
+    capabilities: [
+    //    {
+    //    // capabilities for local Appium web tests on an Android Emulator
+    //    'appium:platformName': 'Android',
+    //    'appium:deviceName': 'Pixel 6',
+    //    'appium:platformVersion': '13.0',
+    //    'appium:automationName': 'UiAutomator2',
+    //    'appium:app': path.join(process.cwd(), 'app/android/ColorNote+Notepad.apk'),
+    //    'appium:autoGrantPermissions': true,
+    //    //"appium:appPackage": "com.viubyhub.mobile",
+    //    //"appium:appActivity": "com.viubyhub.mobile.MainActivity",
+    //}
+    {
+        platformName: 'ios',
+        'appium:deviceName': 'iPhone 12 Pro',
+        'appium:platformVersion': '14.5',
+        'appium:automationName': 'XCUITest',
+        'appium:app': path.join(process.cwd(), './app/ios/MVCTodo.app'),
         'appium:autoGrantPermissions': true,
-        //"appium:appPackage": "com.viubyhub.mobile",
-        //"appium:appActivity": "com.viubyhub.mobile.MainActivity",
-    }],
+    }
+],
 
     //
     // ===================

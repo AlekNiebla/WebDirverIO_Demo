@@ -4,7 +4,7 @@ const AddNoteScreen = require('./add-note.screen');
 class EditNoteScreen {
 
     get firstNote() {
-        return $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/title"]')
+        return $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/title"]');
     }
     get moreButton() {
         return $('~More');
